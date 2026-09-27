@@ -1,0 +1,20 @@
+Expressão Regular:
+^1*(0+1)*0*$
+
+Explicação:
+- ^ e $ : Garantem que a validação é feita do início ao fim da string.
+- 1* : Permite a string começar com qualquer quantidade de números '1'.
+- (0+1)* : É a regra central. Sempre que aparece um ou mais zeros (0+), eles só podem ser seguidos por, no máximo, um único '1'. Isto impede que existam dois '1's consecutivos depois de um zero, tornando impossível a formação da sequência "011".
+- 0* : Permite que a string termine livremente com qualquer quantidade de '0's.
+
+Exemplos de Teste (Válidos - aceites pela expressão):
+- 111
+- 1010
+- 000
+- 100010
+
+Exemplos de Teste (Inválidos - rejeitados por conterem "011"):
+- 011
+- 10110
+- 0011
+- 110111
